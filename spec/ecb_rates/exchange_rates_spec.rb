@@ -21,7 +21,7 @@ RSpec.describe EcbRates::ExchangeRates do
     end
   end
 
-  describe '#exchange_rate_for today' do
+  describe '#exchange_rate_for' do
     before do
       stub_request(:get, (EcbRates::TODAY_RATES)).
         to_return(status: 200, body: load_today_fixture)
