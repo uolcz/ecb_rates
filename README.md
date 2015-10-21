@@ -1,4 +1,24 @@
-# Usage:
+
+
+# EcbRates:
+
+Simple gem for getting exchange rates between from EUR to various other currencies.
+
+## Installation
+
+Add following into your Gemfile
+
+```ruby
+gem 'ecb_rates'
+```
+
+Or install the gem directly
+
+```
+gem install ecb_rates
+```
+
+## Usage
 
 ```ruby
 app = EcbRates::Application.new
@@ -15,6 +35,10 @@ app.exchange_rate('JPY')
 ```
 
 If theres no available exchange rate, method returns *nil*.
+
+## Exchange rate source
+
+All exchange rates are taken from [http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html]
 
 ### Exceptions
 * DateTooOld - triggers when date entered is older than 90 days.
