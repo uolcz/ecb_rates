@@ -4,5 +4,5 @@ require 'ecb_rates/config'
 require 'ecb_rates/exchange_rates'
 
 module EcbRates
-  $:.unshift(File.dirname(__FILE__))
+  $LOAD_PATH.unshift(File.dirname(__FILE__))
 end

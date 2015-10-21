@@ -9,7 +9,7 @@ module EcbRates
       @url = url
     end
 
-    def exchange_rate_for(date, currency)
+    def exchange_rate_for(currency, date)
       normalized_date = normalize_date(date)
 
       source ||= Nokogiri::XML(open(@url))

@@ -6,7 +6,6 @@ RSpec.describe EcbRates::ExchangeRates do
   let(:today_rates)   { EcbRates::ExchangeRates.new(EcbRates::TODAY_RATES) }
   let(:history_rates) { EcbRates::ExchangeRates.new(EcbRates::HISTORY_RATES) }
 
-
   describe '#initialize' do
     context 'today' do
       it 'sets exchange rates today url' do
@@ -38,21 +37,23 @@ RSpec.describe EcbRates::ExchangeRates do
 
     context 'today' do
       it 'returns exchange rate' do
-        expect(today_rates.exchange_rate_for(Date.today, 'JPY')).to eq(135.29)
+        expect(today_rates.exchange_rate_for('JPY', Date.today)).to eq(135.29)
       end
 
       it 'returns nil if exchange rates arent present for particular date' do
-        expect(today_rates.exchange_rate_for(Date.today + 1, 'JPY')).to eq(nil)
+        expect(today_rates.exchange_rate_for('JPY', Date.today + 1)).to eq(nil)
       end
     end
 
     context 'history' do
       it 'returns exchange rate' do
-        expect(history_rates.exchange_rate_for(Date.today - 11, 'JPY')).to eq(134.92)
+        expect(history_rates.exchange_rate_for('JPY', Date.today - 11)).
+          to eq(134.92)
       end
 
       it 'returns nil if exchange rates arent present for particular date' do
-        expect(history_rates.exchange_rate_for(Date.today + 1, 'JPY')).to eq(nil)
+        expect(history_rates.exchange_rate_for('JPY', Date.today + 1)).
+          to eq(nil)
       end
     end
   end
