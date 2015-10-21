@@ -3,7 +3,7 @@
 ```ruby
 app = EcbRates::Application.new
 
-app.exchange_rate(Date.today, 'JPY')
+app.exchange_rate('JPY', Date.today)
 ```
 
 Returns exchange today's exchange rate between EUR and JPY.
