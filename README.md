@@ -3,6 +3,7 @@
 # EcbRates:
 
 Simple gem for getting exchange rates between from EUR to various other currencies.
+Exchange rates are taken from ECB.
 
 ## Installation
 
@@ -26,7 +27,7 @@ app = EcbRates::Application.new
 app.exchange_rate('JPY', Date.today)
 ```
 
-Returns exchange today's exchange rate between EUR and JPY.
+Returns today's exchange rate between EUR and JPY.
 
 Input date defaults to *Date.today* so the above line can written like this:
 

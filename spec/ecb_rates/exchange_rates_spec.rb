@@ -58,10 +58,16 @@ RSpec.describe EcbRates::ExchangeRates do
     end
   end
 
+  # source url:
+  #
+  # http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml
   def load_today_fixture
     File.open('spec/fixtures/eurofxref-daily.xml')
   end
 
+  # source url:
+  #
+  # http://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml
   def load_history_fixture
     File.open('spec/fixtures/eurofxref-hist-90d.xml')
   end
