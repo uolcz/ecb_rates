@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/ucetnictvi-on-line/ecb_rates.svg)](https://travis-ci.org/ucetnictvi-on-line/ico-validator)
 
 # EcbRates:
 
