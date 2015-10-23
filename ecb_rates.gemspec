@@ -6,8 +6,8 @@ require 'ecb_rates/version'
 Gem::Specification.new do |spec|
   spec.name          = 'ecb_rates'
   spec.version       = EcbRates::VERSION
-  spec.authors       = ['Pavel Hronek']
-  spec.email         = ['hronek@uol.cz']
+  spec.authors       = ['Bohuslav Blin', 'Pavel Hronek']
+  spec.email         = ['blin@uol.cz', 'hronek@uol.cz']
 
   spec.summary       = %q{Gem for downloading currency exchange rates from ECB}
   spec.description   = %q{Gem for downloading currency exchange rates from ECB}
