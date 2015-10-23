@@ -2,10 +2,6 @@ require 'date'
 
 module EcbRates
   class Application
-    class DateTooOld < StandardError; end
-    class CurrencyMissing < StandardError; end
-    class CurrencyNotSupported < StandardError; end
-
     attr_reader :today, :history
 
     def initialize

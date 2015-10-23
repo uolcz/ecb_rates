@@ -33,7 +33,7 @@ RSpec.describe EcbRates::Application do
     context 'date older than 90 days from now' do
       it 'raises NotImplemented exception' do
         expect { app.exchange_rate('JPY', Date.today - 91) }.
-          to raise_error EcbRates::Application::DateTooOld
+          to raise_error EcbRates::DateTooOld
       end
     end
 
@@ -48,14 +48,14 @@ RSpec.describe EcbRates::Application do
     context 'currency_missing' do
       it 'raises CurrencyMissing exception' do
         expect { app.exchange_rate(nil) }.
-          to raise_error EcbRates::Application::CurrencyMissing
+          to raise_error EcbRates::CurrencyMissing
       end
     end
 
     context 'currency not supported' do
       it 'raises CurrencyNotSupported exception' do
         expect { app.exchange_rate('IMAGINARY') }.
-          to raise_error EcbRates::Application::CurrencyNotSupported
+          to raise_error EcbRates::CurrencyNotSupported
       end
     end
   end
