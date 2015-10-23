@@ -22,9 +22,7 @@ gem install ecb_rates
 ## Usage
 
 ```ruby
-app = EcbRates::Application.new
-
-app.exchange_rate('JPY', Date.today)
+EcbRates.exchange_rate('JPY', Date.today)
 ```
 
 Returns today's exchange rate between EUR and JPY.
@@ -32,7 +30,7 @@ Returns today's exchange rate between EUR and JPY.
 Input date defaults to *Date.today* so the above line can written like this:
 
 ```ruby
-app.exchange_rate('JPY')
+EcbRates.exchange_rate('JPY')
 ```
 
 If theres no available exchange rate, method returns *nil*.

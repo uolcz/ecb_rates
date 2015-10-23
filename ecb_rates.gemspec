@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Pavel Hronek']
   spec.email         = ['hronek@uol.cz']
 
-  spec.summary       = %q{Gem for downloading currency exchange rates}
-  spec.description   = %q{Gem for downloading currency exchange rates}
+  spec.summary       = %q{Gem for downloading currency exchange rates from ECB}
+  spec.description   = %q{Gem for downloading currency exchange rates from ECB}
   spec.homepage      = "https://github.com/ucetnictvi-on-line/ecb_rates"
   spec.license       = 'MIT'
 
@@ -23,7 +23,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> 1.10'
