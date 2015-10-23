@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ucetnictvi-on-line/ecb_rates.svg)](https://travis-ci.org/ucetnictvi-on-line/ico-validator)
+[![Code Climate](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates/badges/gpa.svg)](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates)
 
 # EcbRates:
 
