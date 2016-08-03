@@ -42,7 +42,7 @@ If theres no available exchange rate, method returns *nil*.
 All exchange rates are taken from [http://www.ecb.europa.eu/stats/exchange/eurofxref/html/index.en.html]
 
 ### Exceptions
-* DateTooOld - triggers when date entered is older than 90 days.
-* CurrencyMissing - triggers when currency is not present.
-* CurrencyNotSupported - triggers when currency is not in list of supported
+* `DateTooOld` - raised when the date entered is older than 90 days.
+* `CurrencyMissing` - raised when a currency is not present.
+* `CurrencyNotSupported` - raised when a currency is not on the list of supported
 currencies.
