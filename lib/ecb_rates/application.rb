@@ -12,7 +12,8 @@ module EcbRates
     def exchange_rate(currency, date = Date.today)
       fail DateTooOld           if date < Date.today - 90
       fail CurrencyMissing      unless currency
-      fail CurrencyNotSupported unless EcbRates::VALID_CURRENCIES.include?(currency.to_sym)
+      fail CurrencyNotSupported unless
+        EcbRates::VALID_CURRENCIES.include?(currency.to_sym)
 
       if date == Date.today
         @today.exchange_rate_for(currency, date)
