@@ -1,25 +1,16 @@
 [![Build Status](https://travis-ci.org/ucetnictvi-on-line/ecb_rates.svg)](https://travis-ci.org/ucetnictvi-on-line/ico-validator)
-[![Code Climate](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates/badges/gpa.svg)](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates)
+[![Dependency Status](https://gemnasium.com/ucetnictvi-on-line/ecb_rates.svg)](https://gemnasium.com/ucetnictvi-on-line/ecb_rates)
 [![Inline docs](http://inch-ci.org/github/ucetnictvi-on-line/ecb_rates.svg?branch=master)](http://inch-ci.org/github/ucetnictvi-on-line/ecb_rates)
+[![Code Climate](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates/badges/gpa.svg)](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates)
+[![Test Coverage](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates/badges/coverage.svg)](https://codeclimate.com/github/ucetnictvi-on-line/ecb_rates)
 
 # EcbRates:
 
-Simple gem for getting exchange rates between from EUR to various other currencies.
-Exchange rates are taken from ECB.
+Simple gem for getting exchange rates between EUR and various other currencies. Exchange rates are taken from European Central Bank (ECB).
 
 ## Installation
 
-Add following into your Gemfile
-
-```ruby
-gem 'ecb_rates'
-```
-
-Or install the gem directly
-
-```
-gem install ecb_rates
-```
+Install by `gem install ecb_rates` or add `gem 'ecb_rates'` to your Gemfile.
 
 ## Usage
 
