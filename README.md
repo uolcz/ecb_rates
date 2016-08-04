@@ -10,7 +10,7 @@ Simple gem for getting exchange rates between EUR and various other currencies. 
 
 ## Installation
 
-Install by `gem install ecb_rates` or add `gem 'ecb_rates'` to your Gemfile.
+Install by entering `gem install ecb_rates` in the command line, or add `gem 'ecb_rates'` to your Gemfile.
 
 ## Usage
 
