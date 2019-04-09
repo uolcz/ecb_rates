@@ -11,7 +11,8 @@ module EcbRates
 
     def exchange_rate(currency, date = Date.today)
       fail CurrencyMissing      unless currency
-      fail CurrencyNotSupported unless EcbRates::VALID_CURRENCIES.include?(currency.to_sym)
+      fail CurrencyNotSupported unless
+        EcbRates::VALID_CURRENCIES.include?(currency.to_sym)
 
       proper_source(date).exchange_rate_for(currency, date)
     end
