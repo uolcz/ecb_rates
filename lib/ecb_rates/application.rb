@@ -2,7 +2,7 @@ require 'date'
 
 module EcbRates
   class Application
-    attr_reader :today, :history
+    attr_reader :today, :history, :full_history
 
     def initialize
       @today   = ExchangeRates.new(EcbRates::TODAY_RATES)
@@ -10,15 +10,20 @@ module EcbRates
     end
 
     def exchange_rate(currency, date = Date.today)
-      fail DateTooOld           if date < Date.today - 90
       fail CurrencyMissing      unless currency
       fail CurrencyNotSupported unless
         EcbRates::VALID_CURRENCIES.include?(currency.to_sym)
 
+      proper_source(date).exchange_rate_for(currency, date)
+    end
+
+    def proper_source(date)
       if date == Date.today
-        @today.exchange_rate_for(currency, date)
+        @today
+      elsif ((Date.today - 90)..Date.today).cover?(date)
+        @history
       else
-        @history.exchange_rate_for(currency, date)
+        @full_history = FullHistoryExchangeRates.new(EcbRates::FULL_HISTORY_RATES)
       end
     end
   end

@@ -2,18 +2,27 @@ require 'spec_helper'
 require 'timecop'
 
 RSpec.describe EcbRates::Application do
+  before do
+    stub_request(:get, (EcbRates::TODAY_RATES)).
+      to_return(status: 200, body: load_today_fixture)
+
+    stub_request(:get, (EcbRates::HISTORY_RATES)).
+      to_return(status: 200, body: load_history_fixture)
+
+    stub_request(:get, (EcbRates::FULL_HISTORY_RATES)).
+      to_return(status: 200, body: load_full_history_fixture)
+
+    Timecop.freeze('2015-10-19')
+  end
+
+  after do
+    Timecop.return
+  end
+
   let(:app)      { EcbRates::Application.new }
   let(:currency) { EcbRates::VALID_CURRENCIES.first }
 
   describe 'exchange_rate' do
-    before do
-      Timecop.freeze('2015-10-19')
-    end
-
-    after do
-      Timecop.return
-    end
-
     context 'date == today' do
       it 'calls exchange_rate_for with current date and currency' do
         expect(app.today).to receive(:exchange_rate_for).
@@ -31,9 +40,10 @@ RSpec.describe EcbRates::Application do
     end
 
     context 'date older than 90 days from now' do
-      it 'raises NotImplemented exception' do
-        expect { app.exchange_rate('JPY', Date.today - 91) }.
-          to raise_error EcbRates::DateTooOld
+      it 'calls exchange_rate_for with current date and currency' do
+        expect_any_instance_of(EcbRates::FullHistoryExchangeRates).to receive(:exchange_rate_for).
+          with('JPY', Date.today - 92)
+        app.exchange_rate('JPY', Date.today - 92)
       end
     end
 
